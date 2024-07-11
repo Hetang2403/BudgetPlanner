@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Budget Planner Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1>Budget Planner</h1>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#budget-form">Add Transaction</a></li>
+                <li><a href="#budget-summary">Summary</a></li>
+                <li><a href="#budget-chart">Chart</a></li>
+                <li><a href="#saving-goals">Saving Goals</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="dashboard" class="dashboard">
+                <div class="welcome">
+                    <h2>Good Evening, User</h2>
+                    <p>By earning an extra <span class="highlight">$3,200.90</span> revenue last week, you’re currently closer to your goals. Keep going!</p>
+                </div>
+                <div class="overview">
+                    <div class="balance">
+                        <h3>Total Balance</h3>
+                        <p>$183,802.12</p>
+                        <p>Last updated on Monday, Oct 23 2023 - 20:17</p>
+                    </div>
+                    <div class="expenses">
+                        <h3>Expenses this month</h3>
+                        <p>$720.09</p>
+                        <p>You have $19.91 left from this month budget</p>
+                    </div>
+                    <div class="revenue">
+                        <h3>Revenue this month</h3>
+                        <p>$3,200.90</p>
+                        <p>You are $14,249.09 closer from your financial goals</p>
+                    </div>
+                </div>
+                <div class="transactions-category">
+                    <h3>Most transactions by category</h3>
+                    <ul>
+                        <li>Food & Beverages - 64%</li>
+                        <li>Entertainment - 12%</li>
+                        <li>Transportation - 10%</li>
+                        <li>Groceries - 7%</li>
+                        <li>Subscription - 3%</li>
+                    </ul>
+                </div>
+                <div class="financial-goals">
+                    <h3>Financial Goals Tracker</h3>
+                    <div class="goal">Goal 1 - 46%</div>
+                    <div class="goal">Goal 2 - 92%</div>
+                    <div class="goal">Goal 3 - 100%</div>
+                </div>
+                <div class="latest-transactions">
+                    <h3>Latest Transactions</h3>
+                    <ul>
+                        <li>Paid for Uber order - $2,12.00 - Paid</li>
+                        <li>SBX - Coldbrew with Salted Caramel Sauce - $5,34.00 - Paid</li>
+                        <li>Payoneer Payment - $3,510.00 - Received</li>
+                        <li>Dharmashuda - $5,534.00 - Paid</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="budget-form" class="budget-form">
+                <h2>Create Budget Plan</h2>
+                <form id="budget-form">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" placeholder="e.g., Salary, Groceries" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" placeholder="e.g., 1000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select id="type" required>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <button type="submit">Add</button>
+                </form>
+            </section>
+
+            <section id="budget-summary" class="budget-summary">
+                <h2>Budget Summary</h2>
+                <div id="summary">
+                    <p>Total Income: <span id="total-income">0</span></p>
+                    <p>Total Expense: <span id="total-expense">0</span></p>
+                    <p>Balance: <span id="balance">0</span></p>
+                </div>
+            </section>
+
+            <section id="budget-chart" class="budget-chart">
+                <h2>Budget Chart</h2>
+                <canvas id="budgetChart"></canvas>
+            </section>
+
+            <section id="saving-goals" class="saving-goals">
+                <h2>Saving Goals</h2>
+                <div id="goals">
+                    <!-- Saving goals will be displayed here -->
+                </div>
+                <form id="goals-form">
+                    <div class="form-group">
+                        <label for="goal-description">Goal Description</label>
+                        <input type="text" id="goal-description" placeholder="e.g., New Car, Vacation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal-amount">Goal Amount</label>
+                        <input type="number" id="goal-amount" placeholder="e.g., 5000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal-deadline">Goal Deadline</label>
+                        <input type="date" id="goal-deadline" required>
+                    </div>
+                    <button type="submit">Add Goal</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
